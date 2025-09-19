@@ -1,0 +1,30 @@
+<div style="max-width:500px; margin:auto; padding:20px;">
+    <h2>Car Scan RepAIr</h2>
+    
+    <mat-form-field style="width:100%;">
+      <input matInput placeholder="Year" [(ngModel)]="year">
+    </mat-form-field>
+  
+    <mat-form-field style="width:100%;">
+      <input matInput placeholder="Make" [(ngModel)]="make">
+    </mat-form-field>
+  
+    <mat-form-field style="width:100%;">
+      <input matInput placeholder="Model" [(ngModel)]="model">
+    </mat-form-field>
+  
+    <mat-form-field style="width:100%;">
+      <input matInput placeholder="OBD-II Code" [(ngModel)]="code">
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="loading">
+      {{ loading ? 'Diagnosing...' : 'Diagnose' }}
+    </button>
+  
+    <div *ngIf="result" style="margin-top:20px;">
+      <mat-card>
+        <pre>{{ result }}</pre>
+      </mat-card>
+    </div>
+  </div>
+  
